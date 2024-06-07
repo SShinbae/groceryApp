@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.8"/>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="lib" path="C:/Users/wanah/Desktop/New folder/New folder/commons-cli-1.5.0.jar"/>
+	<classpathentry kind="lib" path="C:/Users/wanah/Desktop/New folder/New folder/commons-codec-1.11.jar"/>
+	<classpathentry kind="lib" path="C:/Users/wanah/Desktop/New folder/New folder/commons-logging-1.2.jar"/>
+	<classpathentry kind="lib" path="C:/Users/wanah/Desktop/New folder/New folder/httpclient-4.5.14.jar"/>
+	<classpathentry kind="lib" path="C:/Users/wanah/Desktop/New folder/New folder/httpcore-4.4.16.jar"/>
+	<classpathentry kind="lib" path="C:/Users/wanah/Desktop/New folder/New folder/java-json.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>
