@@ -23,6 +23,9 @@ This project consists of two integrated applications to streamline grocery manag
 
 ## Architecture Diagram
 
+![architecture image](https://github.com/SShinbae/groceryApp/assets/80872201/e74d5484-2d11-40d3-9ed0-7ed17e2c0bf8)
+
+
 ## Middleware Endpoints
 
 * **MainApp:**
