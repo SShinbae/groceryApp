@@ -23,7 +23,8 @@ This project consists of two integrated applications to streamline grocery manag
 
 ## Architecture Diagram
 
-  ![architecture image](https://github.com/SShinbae/groceryApp/assets/80872201/e74d5484-2d11-40d3-9ed0-7ed17e2c0bf8)
+
+![architecture image](https://github.com/SShinbae/groceryApp/assets/80872201/e74d5484-2d11-40d3-9ed0-7ed17e2c0bf8)
 
 ## Middleware Endpoints
 
@@ -49,5 +50,3 @@ This project consists of two integrated applications to streamline grocery manag
 | category    | string   | Category of the item (e.g., "Fruit", "Dairy") |
 | price       | decimal  | Price of the item (e.g., 1.25, 3.99)         |
 | status      | string   | Order status ("Not Delivered", "Delivered")   |
-
-
