@@ -1,9 +1,10 @@
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.io.BufferedReader;
-import java.io.FileReader;
-import java.io.IOException;
+import java.io.*;
+import java.net.HttpURLConnection;
+import java.net.URL;
+import java.net.URLEncoder;
 
 public class MainApp {
     private JFrame frame;
@@ -82,7 +83,7 @@ public class MainApp {
                 String categoryName = categoryNameField.getText();
                 String iconName = iconNameField.getText();
                 String tagsCount = tagsCountField.getText();
-                saveToDatabase(categoryName, iconName, tagsCount);
+                saveToDatabase(tagsCount, categoryName, iconName);
             }
         });
 
@@ -105,7 +106,7 @@ public class MainApp {
             @Override
             public void run() {
                 try {
-                    BufferedReader reader = new BufferedReader(new FileReader("C:\\Users\\nurhi\\OneDrive\\Documents\\grocery.txt"));
+                    BufferedReader reader = new BufferedReader(new FileReader("C:\\Users\\wanah\\git\\groceryApp\\groceryApp\\src\\grocery.txt"));
                     StringBuilder data = new StringBuilder();
                     String line;
                     String itemName = tagsCountField.getText().trim(); // Retrieve item name entered by the user
@@ -127,7 +128,6 @@ public class MainApp {
             }
         });
     }
-
 
     private void searchCategory() {
         SwingUtilities.invokeLater(new Runnable() {
@@ -171,9 +171,43 @@ public class MainApp {
         });
     }
 
+    private void saveToDatabase(String itemName, String category, String price) {
+        try {
+            String urlParameters = "itemName=" + URLEncoder.encode(itemName, "UTF-8")
+                    + "&category=" + URLEncoder.encode(category, "UTF-8")
+                    + "&price=" + URLEncoder.encode(price, "UTF-8");
 
-    private void saveToDatabase(String categoryName, String iconName, String tagsCount) {
-        // Implement your save to database logic here
-        // This method is called when the user clicks the "Save To Database" button
+            URL url = new URL("http://localhost/DAD/groceryApp/save_to_database.php");
+            HttpURLConnection conn = (HttpURLConnection) url.openConnection();
+            conn.setDoOutput(true);
+            conn.setRequestMethod("POST");
+            conn.setRequestProperty("Content-Type", "application/x-www-form-urlencoded");
+
+            OutputStream os = conn.getOutputStream();
+            os.write(urlParameters.getBytes());
+            os.flush();
+            os.close();
+
+            int responseCode = conn.getResponseCode();
+            System.out.println("Response Code : " + responseCode);
+
+            if (responseCode == HttpURLConnection.HTTP_OK) { // success
+                BufferedReader in = new BufferedReader(new InputStreamReader(conn.getInputStream()));
+                String inputLine;
+                StringBuilder response = new StringBuilder();
+
+                while ((inputLine = in.readLine()) != null) {
+                    response.append(inputLine);
+                }
+                in.close();
+
+                // Show success message
+                JOptionPane.showMessageDialog(frame, response.toString(), "Record Saved Successfully", JOptionPane.INFORMATION_MESSAGE);
+            } else {
+                System.out.println("POST request not worked");
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 }
