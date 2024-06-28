@@ -106,7 +106,7 @@ public class MainApp {
             @Override
             public void run() {
                 try {
-                    BufferedReader reader = new BufferedReader(new FileReader("C:\\Users\\wanah\\git\\groceryApp\\groceryApp\\src\\grocery.txt"));
+                    BufferedReader reader = new BufferedReader(new FileReader("C:\\Users\\nurhi\\OneDrive\\Documents\\grocery.txt"));
                     StringBuilder data = new StringBuilder();
                     String line;
                     String itemName = tagsCountField.getText().trim(); // Retrieve item name entered by the user
@@ -177,7 +177,7 @@ public class MainApp {
                     + "&category=" + URLEncoder.encode(category, "UTF-8")
                     + "&price=" + URLEncoder.encode(price, "UTF-8");
 
-            URL url = new URL("http://localhost/DAD/groceryApp/save_to_database.php");
+            URL url = new URL("http://localhost/groceryApp/save_to_database.php");
             HttpURLConnection conn = (HttpURLConnection) url.openConnection();
             conn.setDoOutput(true);
             conn.setRequestMethod("POST");

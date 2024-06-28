@@ -110,7 +110,7 @@ public class trackApp {
     private String getItemStatus(String itemName) {
         try {
             // Construct URL to your PHP script (adjust the path as needed)
-            String phpScriptUrl = "http://localhost/DAD/groceryApp/retrieve.php?itemName=" + URLEncoder.encode(itemName, "UTF-8");
+            String phpScriptUrl = "http://localhost/groceryApp/retrieve.php?itemName=" + URLEncoder.encode(itemName, "UTF-8");
 
             // Open connection to the URL
             URL url = new URL(phpScriptUrl);
@@ -154,7 +154,7 @@ public class trackApp {
     private void updateItemStatus(String itemName, String status) {
         try {
             // Construct URL to your PHP script (adjust the path as needed)
-            String phpScriptUrl = "http://localhost/DAD/groceryApp/update_status.php";
+            String phpScriptUrl = "http://localhost/groceryApp/update_status.php";
 
             // Open connection to the URL
             URL url = new URL(phpScriptUrl);
