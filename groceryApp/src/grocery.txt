@@ -1,0 +1,6 @@
+Name:Apple,Category:Fruits,Price:3.50, Status:Not Delivered
+Name:Banana,Category:Fruits,Price:2.00, Status:Not Delivered
+Name:Chicken Breast,Category:Meat,Price:10.00, Status:Not Delivered
+Name:Milk,Category:Dairy,Price:5.00, Status:Delivered
+Name:Cheese,Category:Dairy,Price:8.90, Status:Delivered
+Name:Bread,Category:Bakery,Price:4.50, Status:Not Delivered
