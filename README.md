@@ -50,3 +50,7 @@ This project consists of two integrated applications to streamline grocery manag
 | category    | string   | Category of the item (e.g., "Fruit", "Dairy") |
 | price       | decimal  | Price of the item (e.g., 1.25, 3.99)         |
 | status      | string   | Order status ("Not Delivered", "Delivered")   |
+
+
+## Contributers (Group 15)
+* https://github.com/aimanskyy
