@@ -54,4 +54,3 @@ This project consists of two integrated applications to streamline grocery manag
 
 ## Contributers (Group 15)
 * https://github.com/aimanskyy
-* https://github.com/wanieradzi21
